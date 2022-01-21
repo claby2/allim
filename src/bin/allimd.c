@@ -1,5 +1,3 @@
 #include <stdio.h>
 
-int main() {
-    printf("allim daemon");
-}
+int main() { printf("allim daemon"); }
