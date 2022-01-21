@@ -10,11 +10,11 @@ $(OBJ)/%.o: $(SRC)/%.c
 	mkdir -p obj/
 	$(CC) -I$(SRC) -c $< -o $@
 
-allim: $(OBJECTS)
-	$(CC) $^ src/bin/$@.c -o $@
+allim: $(OBJECTS) src/bin/allim.c
+	$(CC) $^ -o $@
 
-allimd: $(OBJECTS)
-	$(CC) $^ src/bin/$@.c -o $@
+allimd: $(OBJECTS) src/bin/allimd.c
+	$(CC) $^ -o $@
 
 clean:
 	rm -f allim allimd
