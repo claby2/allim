@@ -1,7 +1,8 @@
 SRC := src
 OBJ := obj
 
-LIBS := -lxcb
+FLAGS := -Wall -Wpedantic -Wextra
+LIBS := -lxcb -lxcb-randr
 
 SOURCES := $(wildcard $(SRC)/*.c)
 OBJECTS := $(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SOURCES))
@@ -10,13 +11,13 @@ all: allim allimd
 
 $(OBJ)/%.o: $(SRC)/%.c
 	mkdir -p obj/
-	$(CC) -I$(SRC) -c $< -o $@
+	$(CC) $(FLAGS) -I$(SRC) -c $< -o $@
 
 allim: $(OBJECTS) src/bin/allim.c
-	$(CC) $^ -o $@ $(LIBS)
+	$(CC) $(FLAGS) $^ -o $@ $(LIBS)
 
 allimd: $(OBJECTS) src/bin/allimd.c
-	$(CC) $^ -o $@
+	$(CC) $(FLAGS) $^ -o $@
 
 clean:
 	rm -f allim allimd
