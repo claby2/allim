@@ -19,3 +19,5 @@ allimd: $(OBJECTS)
 clean:
 	rm -f allim allimd
 	rm -rf obj/
+
+.PHONY: all clean
