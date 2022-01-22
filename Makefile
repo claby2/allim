@@ -1,7 +1,7 @@
 SRC := src
 OBJ := obj
 
-FLAGS := -Wall -Wpedantic -Wextra -g
+FLAGS := -Wall -Wpedantic -Wextra
 LIBS := -lxcb -lxcb-randr
 
 SOURCES := $(wildcard $(SRC)/*.c)
